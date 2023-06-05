@@ -79,8 +79,10 @@ def compare_networkhealth():
     newdata = [tmp].copy()
     collection = db['NetworkHealth']
     olddata = collection.find()
+    olddata = list(olddata)
+    if(olddata==[]):
+        olddata = [{"NetworkHealth":"No Data", "_id":"nodata"}]
     for item in olddata:
-        count = 0
         for item2 in newdata:
             if(item["NetworkHealth"]==item2["NetworkHealth"]):
                 del item["_id"]
