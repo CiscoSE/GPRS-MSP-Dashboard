@@ -10,9 +10,9 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('/Users/joeljos/Documents/Automation TSA/Code/GPRS-MSP-Dashboard'))
 
-project = 'MSPdashboard'
+project = 'GPRS-MSP-DASHBOARD'
 copyright = '2023, Cisco'
-author = 'Cisco'
+author = 'Joel Jose (joeljos@cisco.com)'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------

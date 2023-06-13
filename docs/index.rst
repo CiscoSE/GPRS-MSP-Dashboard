@@ -1,9 +1,9 @@
-.. MSPdashboard documentation master file, created by
+.. GPRS-MSP-DASHBOARD documentation master file, created by
    sphinx-quickstart on Tue Jun 13 09:50:49 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to MSPdashboard's documentation!
+Welcome to GPRS-MSP-DASHBOARD documentation!
 ========================================
 
 
