@@ -13,13 +13,16 @@ USERNAME = credentials.DNAC_USERNAME
 PASSWORD = credentials.DNAC_PASSWORD 
 
 
-
-response = requests.post(BASE_URL + AUTH_URL, auth=HTTPBasicAuth(USERNAME, PASSWORD), verify=False)
-token = response.json()['Token']
-headers = {'X-Auth-Token': token, 'Content-Type': 'application/json'}
-
-
 def get_data(uri,header=None, query=None):
+    """Get data from Dnac using the uri and query provided
+    
+        Args:  uri (str): uri to get data from
+           query (dict): query to be passed to the uri
+           Returns: json: json response from Dnac"""
+    
+    response = requests.post(BASE_URL + AUTH_URL, auth=HTTPBasicAuth(USERNAME, PASSWORD), verify=False)
+    token = response.json()['Token']
+    headers = {'X-Auth-Token': token, 'Content-Type': 'application/json'}
     while True:
         url = BASE_URL + uri
         if(header):
@@ -40,6 +43,9 @@ def get_data(uri,header=None, query=None):
             continue
 
 def post_data(uri, body=None):
+    response = requests.post(BASE_URL + AUTH_URL, auth=HTTPBasicAuth(USERNAME, PASSWORD), verify=False)
+    token = response.json()['Token']
+    headers = {'X-Auth-Token': token, 'Content-Type': 'application/json'}
     url = BASE_URL + uri
     response = requests.post(url,headers=headers,json=body,verify=False)
     if response.status_code == 202:

@@ -10,6 +10,10 @@ app = Flask(__name__)
 
 @app.route('/data', methods=['GET'])
 def get_data():
+    """Return data about the devices.
+    parameters: None
+    returns: JSON
+    """
     data = { 
         "vManageHealth": vManageHealth.get_data(),
         "DnacHealth" : DnacHealth.get_data(),

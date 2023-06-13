@@ -1,14 +1,20 @@
+from pprint import pprint
+
+import requests
+
+import credentials
 import demodbdata
 import mongodb_auth
-import requests
-from pprint import pprint
 import thousandEyesAppHealth
-import credentials
 
 data =[]
 db = []
 
 def compare_alarm():
+    """ Compares the alarms from vManage and DNAC and returns the summary and details of the comparison 
+    parameters: None
+    returns: [alarm_summary, alarm_details]
+    """
     removed = []
     changed = []
     added = []
@@ -62,6 +68,10 @@ def compare_alarm():
 
 
 def compare_networkhealth():
+    """ Compares the network health from vManage and DNAC and returns the summary and details of the comparison
+    parameters: None
+    returns: [networkhealth_summary, networkhealth_details]
+    """
     removed = []
     changed = []
     added = []
@@ -114,6 +124,11 @@ def compare_networkhealth():
 
 
 def compare_devicehealth():
+    """ Compares the device health from vManage and DNAC and returns the summary and details of the comparison
+    parameters: None
+    returns: [devicehealth_summary, devicehealth_details]
+    """
+
     removed = []
     changed = []
     added = []
@@ -166,6 +181,11 @@ def compare_devicehealth():
 
 
 def compare_applicationhealth():
+    """ Compares the application health from vManage, DNAC and ThousandEyes and returns the summary and details of the comparison
+    parameters: None
+    returns: [applicationhealth_summary, applicationhealth_details]
+    """
+    
     removed = []
     changed = []
     added = []
@@ -221,6 +241,11 @@ def compare_applicationhealth():
 
 
 def messageme(text):
+    """ Sends a message to the user on webex teams
+    parameters: text
+    returns: None
+    """
+
     header = {"Content-Type":"application/json", "Authorization":"Bearer "+credentials.webex_token}
     roomId="Y2lzY29zcGFyazovL3VzL1JPT00vYjc3ZjFhYTAtZDQ4Ni0xMWVkLThjOTgtMGIyNDQ4YjZmYzU4"
     body = {"roomId": roomId,"markdown":text}
@@ -231,13 +256,24 @@ def messageme(text):
         print("some error trying to send webex message..",status)
 
 def notify(intro,id,summary):
+    """ Sends a message to the user on webex teams
+    parameters: intro,id,summary
+    returns: None
+    """
+
     text = intro+" id : " + str(id)
     messageme(text=text)
     text = "**"+intro+"**"+" summary : "+str(summary)
     messageme(text=text)
 
 
-def runme(dbparam = mongodb_auth.authenticatedb(dbname='storedb'),dataparam = demodbdata.data.copy()):
+def runme(dbparam,dataparam = demodbdata.data.copy()):
+    """ Runs the script and sends the summary and details to the user on webex teams
+    parameters: dbparam,dataparam
+    returns: None
+    """
+    if(dbparam==None):
+        dbparam = mongodb_auth.authenticatedb(dbname='storedb')
     global data, db
     db = dbparam
     data = dataparam

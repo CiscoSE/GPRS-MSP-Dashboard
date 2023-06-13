@@ -15,14 +15,16 @@ def runme():
     return data
 
 
-count = 0
-while(True):
-    try:
-        pprint(runme())
-    except Exception as e:
-        print("Exception occured : ",e)
-        print("Continuing..")
-        continue
-    count+=1
-    print("dryrun count is : ",count,"\nSleeping for 60 seconds..")
-    time.sleep(60)
+
+if __name__ == '__main__':
+    count = 0
+    while(True):
+        try:
+            pprint(runme())
+        except Exception as e:
+            print("Exception occured : ",e)
+            print("Continuing..")
+            continue
+        count+=1
+        print("dryrun count is : ",count,"\nSleeping for 60 seconds..")
+        time.sleep(60)

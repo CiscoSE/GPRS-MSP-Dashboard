@@ -3,6 +3,13 @@ from pprint import pprint
 
 
 def get_data():
+    """Get data from DNAC
+
+    Args:   None
+    
+    Returns:   List of dict
+
+    """
     result = []
     data = Dnac_auth.get_data(uri="/dna/intent/api/v1/issues")["response"]
     for item in data:

@@ -6,6 +6,10 @@ import dbnotifications
 
 
 def runme():
+    """This function is used to push data to the database
+    parameters: None
+    returns: None
+    """
     db = mongodb_auth.authenticatedb()
 
     response = requests.get("http://10.1.8.29:5555/data")
@@ -70,15 +74,7 @@ def runme():
         print(mongodb_auth.addData(data,collection))
 
         
-runme()
 
-
-
-"""
-
-while(True):
+if __name__ == "__main__":
     runme()
-    print("Sleeping for 5 minutes..")
-    time.sleep(300)
 
- """

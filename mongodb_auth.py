@@ -26,6 +26,8 @@ def authenticatedb(dbname='maindb'):
     # Send a ping to confirm a successful connection
     try:
         client.admin.command('ping')
+        import sys
+        print (sys._getframe(1).f_code.co_name)
         print("Pinged your deployment. You successfully connected to MongoDB!")
     except Exception as e:
         print(e)

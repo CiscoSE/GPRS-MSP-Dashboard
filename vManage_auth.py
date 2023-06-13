@@ -26,10 +26,10 @@ def authenticate(vmanage_ip, username, password):
             raise Exception("Failed to obtain API token")
     else:
         raise Exception("Authentication failed")
-    
-session, token = authenticate(vmanage_ip, username, password)
 
-def get_data(uri, query=None, query2 = None, session=session, vmanage_ip=vmanage_ip, token=token):
+def get_data(uri, query=None, query2 = None, vmanage_ip=vmanage_ip):
+    session, token = authenticate(vmanage_ip, username, password)
+    count = 60
     while True:
         url = f"https://{vmanage_ip}{uri}"
         headers = {"X-XSRF-TOKEN": token}
@@ -42,19 +42,22 @@ def get_data(uri, query=None, query2 = None, session=session, vmanage_ip=vmanage
 
         response = session.get(url, headers=headers, params=params, verify=False)
         if response.status_code == 200:
+            count = 60
             try:
                 return response.json()
             except Exception as e:
                 continue
         elif(response.status_code == 429):
-            print("got response 429 from Vmanage, retrying in 60 seconds..")
-            time.sleep(60)
+            count = count * 1.25
+            print("got response 429 from Vmanage, retrying in " + count + " seconds..")
+            time.sleep(count)
             continue
         else:
             print(response, response.text)
             continue
         
-def post_data(uri, param=None, session=session, vmanage_ip=vmanage_ip, token=token):
+def post_data(uri, param=None, vmanage_ip=vmanage_ip):
+    session, token = authenticate(vmanage_ip, username, password)
     url = f"https://{vmanage_ip}{uri}"
     headers = {"X-XSRF-TOKEN": token}
     response = session.post(url, headers=headers, json=param, verify=False)

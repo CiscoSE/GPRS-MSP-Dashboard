@@ -37,7 +37,7 @@ if __name__ == '__main__':
         delete_webhook(webhook_id)
     
     # Replace <YOUR_WEBHOOK_URL> with the URL that should receive the webhook events
-    WEBHOOK_URL = 'https://e3ec-2405-201-d003-ebc1-107f-14c4-4d17-b05b.ngrok-free.app'
+    WEBHOOK_URL = 'https://4bd5-2001-428-ce01-2320-5c7-fcef-8b5e-32b7.ngrok-free.app'
 
     # Define the webhook payload
     webhook_data = {
