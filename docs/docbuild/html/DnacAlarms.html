@@ -36,9 +36,50 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="DnacAlarms.get_data">
 <span class="sig-prename descclassname"><span class="pre">DnacAlarms.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DnacAlarms.get_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get data from DNAC</p>
-<p>Args:   None</p>
-<p>Returns:   List of dict</p>
+<dd><p>Get all alarms from DNAC</p>
+<p>params:   None</p>
+<dl class="simple">
+<dt>Returns:   List of dictionaries containing the following keys:</dt><dd><p>severity (str): severity of the alarm
+summary (str): summary of the alarm
+name (str): name of the device
+url (str): url to the alarm in DNAC</p>
+</dd>
+<dt>example:</dt><dd><dl class="simple">
+<dt>[{‘name’: ‘CPS-BDR’,</dt><dd><p>‘severity’: ‘major’,
+‘summary’: ‘device_time_drift’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘Appx_CSR1Kv’,</dt><dd><p>‘severity’: ‘moderate’,
+‘summary’: ‘router_interface_excess_rx_tx_util’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘Appx_CSR1Kv’,</dt><dd><p>‘severity’: ‘moderate’,
+‘summary’: ‘router_interface_input_output_discards’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘Appx_CSR1Kv’,</dt><dd><p>‘severity’: ‘major’,
+‘summary’: ‘device_time_drift’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘DC-Switch.demo.local’,</dt><dd><p>‘severity’: ‘major’,
+‘summary’: ‘device_time_drift’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘CPS-Edge2’,</dt><dd><p>‘severity’: ‘major’,
+‘summary’: ‘device_time_drift’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘CPS-Edge1’,</dt><dd><p>‘severity’: ‘major’,
+‘summary’: ‘device_time_drift’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’},</p>
+</dd>
+<dt>{‘name’: ‘CPS-L2Border’,</dt><dd><p>‘severity’: ‘major’,
+‘summary’: ‘device_time_drift’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open">https://10.1.100.4/dna/assurance/dashboards/issues-events/issues/open</a>’}]</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

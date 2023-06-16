@@ -36,7 +36,68 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="vManageHealth.get_data">
 <span class="sig-prename descclassname"><span class="pre">vManageHealth.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vManageHealth.get_data" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns a list of dictionaries containing the health of the network and the devices in the network.
+The first dictionary contains the health of the network and the second dictionary contains the health of the devices.
+The health of the network is determined by the health of the devices in the network.
+The health of the devices is determined by the reachability of the devices.</p>
+<p>param:      None</p>
+<dl>
+<dt>Returns:    [dict, list]</dt><dd><p>[networkHealth, deviceHealth]</p>
+</dd>
+<dt>Example:</dt><dd><dl>
+<dt>[{‘networkHealth’: 0},</dt><dd><dl>
+<dt>[{‘deviceFamily’: ‘vedge’,</dt><dd><blockquote>
+<div><p>‘deviceHealth’: ‘positive’,
+‘ipAddress’: ‘1.2.3.4’,
+‘name’: ‘DC-8kv’,
+‘reachabilityHealth’: ‘reachable’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health">https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health</a>?systemIp=1.2.3.4&amp;localSystemIp=1.2.3.4&amp;device-model=vedge&amp;uuid=C8K-PAYG-ece-0a57-46cd-bb14-d39a30cae7cd’,
+‘uuid’: ‘C8K-PAYG-ece-0a57-46cd-bb14-d39a30cae7cd’},</p>
+</div></blockquote>
+<dl class="simple">
+<dt>{‘deviceFamily’: ‘vedge’,</dt><dd><p>‘deviceHealth’: ‘critical’,
+‘ipAddress’: ‘100.100.100.100’,
+‘name’: ‘CPS-WANEgde1’,
+‘reachabilityHealth’: ‘reachable’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health">https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health</a>?systemIp=100.100.100.100&amp;localSystemIp=100.100.100.100&amp;device-model=vedge&amp;uuid=CSR-337C2D1B-3F54-F921-BCD6-043219E2FC9B’,
+‘uuid’: ‘CSR-337C2D1B-3F54-F921-BCD6-043219E2FC9B’},</p>
+</dd>
+<dt>{‘deviceFamily’: ‘vedge’,</dt><dd><p>‘deviceHealth’: ‘moderate’,
+‘ipAddress’: ‘100.0.0.10’,
+‘name’: ‘RS1001-BR-WAN1’,
+‘reachabilityHealth’: ‘reachable’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health">https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health</a>?systemIp=100.0.0.10&amp;localSystemIp=100.0.0.10&amp;device-model=vedge&amp;uuid=ISR4331/K9-FDO2116130M’,
+‘uuid’: ‘ISR4331/K9-FDO2116130M’},</p>
+</dd>
+<dt>{‘deviceFamily’: ‘vmanage’,</dt><dd><p>‘deviceHealth’: ‘positive’,
+‘ipAddress’: ‘11.11.11.11’,
+‘name’: ‘vmanage’,
+‘reachabilityHealth’: ‘reachable’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health">https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health</a>?systemIp=11.11.11.11&amp;localSystemIp=11.11.11.11&amp;device-model=vmanage&amp;uuid=a12b3fd2-e367-4ed1-960a-6a56fbb19635’,
+‘uuid’: ‘a12b3fd2-e367-4ed1-960a-6a56fbb19635’},</p>
+</dd>
+<dt>{‘deviceFamily’: ‘vbond’,</dt><dd><p>‘deviceHealth’: ‘positive’,
+‘ipAddress’: ‘11.11.11.12’,
+‘name’: ‘vBond’,
+‘reachabilityHealth’: ‘reachable’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health">https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health</a>?systemIp=11.11.11.12&amp;localSystemIp=11.11.11.12&amp;device-model=vbond&amp;uuid=44a23240-3c4b-49de-8d9b-cd4ba9a4470a’,
+‘uuid’: ‘44a23240-3c4b-49de-8d9b-cd4ba9a4470a’},</p>
+</dd>
+<dt>{‘deviceFamily’: ‘vsmart’,</dt><dd><p>‘deviceHealth’: ‘positive’,
+‘ipAddress’: ‘11.11.11.13’,
+‘name’: ‘vSmart’,
+‘reachabilityHealth’: ‘reachable’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health">https://10.1.100.11/?_open=ext#/app/monitor/devices/dashboard/health</a>?systemIp=11.11.11.13&amp;localSystemIp=11.11.11.13&amp;device-model=vsmart&amp;uuid=8e96b807-86cb-4e3c-961b-95a9b5a4d98c’,
+‘uuid’: ‘8e96b807-86cb-4e3c-961b-95a9b5a4d98c’}]]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

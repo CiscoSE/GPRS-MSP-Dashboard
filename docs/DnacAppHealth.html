@@ -36,7 +36,63 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="DnacAppHealth.get_data">
 <span class="sig-prename descclassname"><span class="pre">DnacAppHealth.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DnacAppHealth.get_data" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get application health from DNAC</p>
+<dl>
+<dt>params: </dt><dd><p>none</p>
+</dd>
+<dt>Returns:</dt><dd><p>json: json response from Dnac</p>
+</dd>
+<dt>example:</dt><dd><dl>
+<dt>[{‘events’: ‘health: 5, packetLossPercent: 60, ‘</dt><dd><blockquote>
+<div><blockquote>
+<div><p>‘networkLatency: 84, Jitter: None’,</p>
+</div></blockquote>
+<p>‘health’: ‘critical’,
+‘name’: ‘http’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/application/details?id=http&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721">https://10.1.100.4/dna/assurance/application/details?id=http&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721</a>’},</p>
+</div></blockquote>
+<dl>
+<dt>{‘events’: ‘health: 5, packetLossPercent: 58, ‘</dt><dd><blockquote>
+<div><p>‘networkLatency: 3, Jitter: None’,</p>
+</div></blockquote>
+<p>‘health’: ‘critical’,
+‘name’: ‘ssl’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/application/details?id=ssl&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721">https://10.1.100.4/dna/assurance/application/details?id=ssl&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721</a>’},</p>
+</dd>
+<dt>{‘events’: ‘health: 1, packetLossPercent: 80, ‘</dt><dd><blockquote>
+<div><p>‘networkLatency: 599, Jitter: None’,</p>
+</div></blockquote>
+<p>‘health’: ‘critical’,
+‘name’: ‘binary-over-http’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/application/details?id=binary-over-http&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721">https://10.1.100.4/dna/assurance/application/details?id=binary-over-http&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721</a>’},</p>
+</dd>
+<dt>{‘events’: ‘health: 1, packetLossPercent: 50, ‘</dt><dd><blockquote>
+<div><p>‘networkLatency: 2, Jitter: None’,</p>
+</div></blockquote>
+<p>‘health’: ‘critical’,
+‘name’: ‘google-play’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/application/details?id=google-play&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721">https://10.1.100.4/dna/assurance/application/details?id=google-play&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721</a>’},</p>
+</dd>
+<dt>{‘events’: ‘health: 5, packetLossPercent: 45, ‘</dt><dd><blockquote>
+<div><p>‘networkLatency: 2, Jitter: None’,</p>
+</div></blockquote>
+<p>‘health’: ‘critical’,
+‘name’: ‘google-services’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/application/details?id=google-services&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721">https://10.1.100.4/dna/assurance/application/details?id=google-services&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721</a>’},</p>
+</dd>
+<dt>{‘events’: ‘health: 5, packetLossPercent: 76, ‘</dt><dd><blockquote>
+<div><p>‘networkLatency: 5, Jitter: None’,</p>
+</div></blockquote>
+<p>‘health’: ‘critical’,
+‘name’: ‘ocsp’,
+‘url’: ‘<a class="reference external" href="https://10.1.100.4/dna/assurance/application/details?id=ocsp&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721">https://10.1.100.4/dna/assurance/application/details?id=ocsp&amp;siteId=4f885bef-c58b-4daf-8e1e-f71576b69721</a>’}]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

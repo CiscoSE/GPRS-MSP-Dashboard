@@ -38,8 +38,11 @@
 <span class="sig-prename descclassname"><span class="pre">Dnac_auth.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dnac_auth.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from Dnac using the uri and query provided</p>
 <dl class="simple">
-<dt>Args:  uri (str): uri to get data from</dt><dd><p>query (dict): query to be passed to the uri
-Returns: json: json response from Dnac</p>
+<dt>params:   </dt><dd><p>uri (str): uri to get data from
+header (dict): header to be passed to the uri (optional)
+query (dict): query to be passed to the uri (optional)</p>
+</dd>
+<dt>Returns: </dt><dd><p>json: json response from Dnac</p>
 </dd>
 </dl>
 </dd></dl>
@@ -47,7 +50,15 @@ Returns: json: json response from Dnac</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="Dnac_auth.post_data">
 <span class="sig-prename descclassname"><span class="pre">Dnac_auth.</span></span><span class="sig-name descname"><span class="pre">post_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dnac_auth.post_data" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Post data to Dnac using the uri and body provided</p>
+<dl class="simple">
+<dt>params:</dt><dd><p>uri (str): uri to post data to
+body (dict): body to be passed to the uri (optional)</p>
+</dd>
+<dt>Returns:</dt><dd><p>json: json response from Dnac</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 
