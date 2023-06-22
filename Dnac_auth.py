@@ -1,21 +1,3 @@
-"""
-Copyright (c) 2023 Cisco and/or its affiliates.
-
-This software is licensed to you under the terms of the Cisco Sample
-Code License, Version 1.1 (the "License"). You may obtain a copy of the
-License at
-
-               https://developer.cisco.com/docs/licenses
-
-All use of the material herein must be in accordance with the terms of
-the License. All rights not expressly granted by the License are
-reserved. Unless required by applicable law or agreed to separately in
-writing, software distributed under the License is distributed on an "AS
-IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-or implied.
-
-"""
-
 import requests
 from requests.auth import HTTPBasicAuth
 import time
@@ -32,11 +14,17 @@ PASSWORD = credentials.DNAC_PASSWORD
 
 
 def get_data(uri,header=None, query=None):
-    """Get data from Dnac using the uri and query provided
+    """
+    Get data from Dnac using the uri and query provided
     
-        Args:  uri (str): uri to get data from
-           query (dict): query to be passed to the uri
-           Returns: json: json response from Dnac"""
+    params:   
+            uri (str): uri to get data from
+            header (dict): header to be passed to the uri (optional)
+            query (dict): query to be passed to the uri (optional)
+    
+    Returns: 
+            json: json response from Dnac
+    """
     
     response = requests.post(BASE_URL + AUTH_URL, auth=HTTPBasicAuth(USERNAME, PASSWORD), verify=False)
     token = response.json()['Token']
@@ -61,6 +49,17 @@ def get_data(uri,header=None, query=None):
             continue
 
 def post_data(uri, body=None):
+    """
+    Post data to Dnac using the uri and body provided
+
+    params:
+            uri (str): uri to post data to
+            body (dict): body to be passed to the uri (optional)
+
+    Returns:
+            json: json response from Dnac
+    """
+    
     response = requests.post(BASE_URL + AUTH_URL, auth=HTTPBasicAuth(USERNAME, PASSWORD), verify=False)
     token = response.json()['Token']
     headers = {'X-Auth-Token': token, 'Content-Type': 'application/json'}
