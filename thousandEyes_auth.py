@@ -23,6 +23,7 @@ def get_data(uri):
 
 
 if __name__ == "__main__":
-    pprint(get_data(uri="/v6/web/http-server/3732333"))
+    #pprint(get_data(uri="/v6/web/http-server/3732333"))
+    pprint(get_data(uri="/v6/net/metrics/3732333"))
 
     

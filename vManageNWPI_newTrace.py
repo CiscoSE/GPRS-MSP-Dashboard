@@ -2,7 +2,7 @@ import vManage_auth
 import time
 
 #We are hardcoding the VLANID as we cannot have more than 2 vlanid per site for the nwpi trace
-sitevlan = [{'100':['10']},{'121':['10']}]
+sitevlan = [{'300':['10']},{'300':['20']}]
 
 
 def traceexists():

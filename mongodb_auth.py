@@ -2,6 +2,7 @@
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 import credentials
+import certifi
 #import urllib.parse
 
 #password=urllib.parse.quote_plus(credentials.mongodb_password)
@@ -15,18 +16,24 @@ def purge_collection(collection):
     
     return('Deleted {} documents from collection.'.format(result.deleted_count))
 
-def addData(data,collection):
+""" def addData(data,collection):
     ids=[]
     for item in data:
         # Insert a document
         doc = item
         result = collection.insert_one(doc)
+        print("Inserted document with id : ",result.inserted_id)
         ids.append(result.inserted_id)
     return(ids)
+ """
+def addData(data,collection):
+    # Insert all documents
+    result = collection.insert_many(data)
+    return(len(result.inserted_ids))
 
 def authenticatedb(dbname='maindb'):
     # Create a new client and connect to the server
-    client = MongoClient(uri, server_api=ServerApi('1'))
+    client = MongoClient(uri, server_api=ServerApi('1'),tlsCAFile=certifi.where())
     # Send a ping to confirm a successful connection
     try:
         client.admin.command('ping')

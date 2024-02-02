@@ -7,7 +7,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from pprint import pprint
 import credentials
 
-BASE_URL = 'https://10.1.100.4'
+BASE_URL = 'https://64.100.11.37'
 AUTH_URL = '/dna/system/api/v1/auth/token'
 USERNAME = credentials.DNAC_USERNAME
 PASSWORD = credentials.DNAC_PASSWORD 

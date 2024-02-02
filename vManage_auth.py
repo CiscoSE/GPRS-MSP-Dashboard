@@ -4,11 +4,12 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 import time
 import credentials
+from pprint import pprint
 
 # Replace these variables with your own values 
 username = credentials.vManage_username
 password = credentials.vManage_password
-vmanage_ip = '10.1.100.11'
+vmanage_ip = '64.100.11.55'
 
 def authenticate(vmanage_ip, username, password):
     url = f"https://{vmanage_ip}/j_security_check"
@@ -66,3 +67,14 @@ def post_data(uri, param=None, vmanage_ip=vmanage_ip):
     else:
         print(response, response.text)
         raise Exception("Failed to get data")
+    
+
+
+if __name__ == "__main__":
+    query = {"query":{
+    "field": "active",
+    "type": "boolean",
+    "value": ["true"],
+    "operator": "equal"
+}}
+    pprint(get_data("/dataservice/alarms",query2=query)["data"])

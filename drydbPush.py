@@ -1,15 +1,15 @@
 import requests
 from pprint import pprint
 import time
-import dbnotifications
+#import dbnotifications
 
 
 
 def runme():
-    response = requests.get("http://10.1.8.29:5555/data")
+    response = requests.get("http://192.168.29.227:5555/data")
     if response.status_code ==200:
         data = response.json()["data"]
-        dbnotifications.runme(dataparam=data)
+        #dbnotifications.runme(dataparam=data)
     else:
         return response
     return data
