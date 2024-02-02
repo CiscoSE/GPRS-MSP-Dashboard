@@ -12,7 +12,7 @@ def runme():
     """
     db = mongodb_auth.authenticatedb()
 
-    response = requests.get("http://192.168.29.227:5555/data")
+    response = requests.get("http://127.0.0.1:5555/data")
     data = response.json()["data"]
     print("completed getting data from ControllerREST..")
 

@@ -6,7 +6,7 @@ import time
 
 
 def runme():
-    response = requests.get("http://192.168.29.227:5555/data")
+    response = requests.get("http://127.0.0.1:5555/data")
     if response.status_code ==200:
         data = response.json()["data"]
         #dbnotifications.runme(dataparam=data)
