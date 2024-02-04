@@ -8,4 +8,8 @@ This is a Cross-Domain dashboard for displaying day 2 operations data from the C
 
 _Note : The steps here are only for a lab environment. There may be additional considerations like security, performance, scalability, maintainability..etc needed before production use._
 
+Recommended to use Python virtualenv for your python projects :
+1. python3 -m venv my_env
+2. source my_env/bin/activate
+
 ![Lab Guide](https://github.com/CiscoSE/GPRS-MSP-Dashboard/assets/11584709/2eff5d71-6aac-4cfe-b180-cd34e56bb52f)
