@@ -9,7 +9,7 @@ from pprint import pprint
 # Replace these variables with your own values 
 username = credentials.vManage_username
 password = credentials.vManage_password
-vmanage_ip = '64.100.11.55'
+vmanage_ip = 'cisco.msp-sdwan.dc-01.com'
 
 def authenticate(vmanage_ip, username, password):
     url = f"https://{vmanage_ip}/j_security_check"
